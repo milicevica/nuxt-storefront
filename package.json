@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-storefront",
+  "version": "1.0.0",
+  "description": "A framework for generating ecommerce applications using Nuxt",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milicevica/nuxt-storefront"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "commit": "cz"
+  },
+  "author": {
+    "name": "Aleksandar Milicevic",
+    "email": "hi@milicevic.dev",
+    "url": "https://www.milicevic.dev"
+  },
+  "engines": {
+    "node": ">=22.18.0",
+    "npm": ">=10.9.3"
+  },
+  "packageManager": "pnpm@10.18.3",
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/prompt-cli": "^20.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
