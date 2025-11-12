@@ -9,7 +9,10 @@
   },
   "license": "MIT",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky",
+    "commit": "cz"
+  },
   "author": {
     "name": "Aleksandar Milicevic",
     "email": "hi@milicevic.dev",
@@ -19,5 +22,17 @@
     "node": ">=22.18.0",
     "npm": ">=10.9.3"
   },
-  "packageManager": "pnpm@10.18.3"
+  "packageManager": "pnpm@10.18.3",
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/prompt-cli": "^20.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
