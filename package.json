@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-storefront",
+  "version": "1.0.0",
+  "description": "A framework for generating ecommerce applications using Nuxt",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milicevica/nuxt-storefront"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {},
+  "author": {
+    "name": "Aleksandar Milicevic",
+    "email": "hi@milicevic.dev",
+    "url": "https://www.milicevic.dev"
+  },
+  "engines": {
+    "node": ">=22.18.0",
+    "npm": ">=10.9.3"
+  },
+  "packageManager": "pnpm@10.18.3"
+}
