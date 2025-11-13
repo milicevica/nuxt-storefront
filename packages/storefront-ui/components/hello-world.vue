@@ -1,10 +1,13 @@
 <script setup lang="ts">
-const { myLayer } = useAppConfig();
+const { storefrontUi } = useAppConfig();
 </script>
 
 <template>
   <div>
-    <h1>Hello World!</h1>
-    <pre>{{ myLayer }}</pre>
+    <h1 class="font-bold text-3xl">
+      Hello World!
+    </h1>
+    <u-button>Example</u-button>
+    <pre>{{ storefrontUi }}</pre>
   </div>
 </template>
