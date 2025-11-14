@@ -11,7 +11,14 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "commit": "cz"
+    "commit": "cz",
+    "dev": "pnpm run -r dev",
+    "dev:prepare": "pnpm run -r dev:prepare",
+    "build": "pnpm run -r build",
+    "generate": "pnpm run -r generate",
+    "preview": "pnpm run -r preview",
+    "lint": "pnpm run -r lint",
+    "lint:fix": "pnpm run -r lint:fix"
   },
   "author": {
     "name": "Aleksandar Milicevic",
