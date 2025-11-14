@@ -43,7 +43,7 @@ jobs:
             echo "Fixes detected — committing..."
             git add .
             git commit -m "chore(eslint): auto-fix lint issues"
-            git push
+            git push origin HEAD:${{ github.event.pull_request.head.ref }}
           else
             echo "No fixes to commit."
           fi
