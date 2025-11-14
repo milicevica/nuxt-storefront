@@ -1,0 +1,53 @@
+name: ESLint PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.18.0"
+          cache: "pnpm"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install dependencies with pnpm
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ESLint with autofix
+        run: pnpm lint:fix
+
+      - name: Auto-commit ESLint fixes
+        if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          # Check if there are changes after eslint --fix
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Fixes detected — committing..."
+            git add .
+            git commit -m "chore(eslint): auto-fix lint issues"
+            git push
+          else
+            echo "No fixes to commit."
+          fi
+
+      - name: Check for remaining lint errors
+        run: pnpm lint
